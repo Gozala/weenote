@@ -1,0 +1,221 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf8">
+    <title>weenote</title>
+    <script src="./weenote.js"></script>
+    <script src="./highlighter.js"></script>
+    <link type="text/css" rel="stylesheet" href="./ambiance.css"/>
+    <style>
+      body {
+        font-family: "Helvetica", "sans-serif";
+        font-weight: bold;
+        background-color: #000;
+        text-align: center;
+        color: #FFF;
+        white-space: nowrap;
+      }
+
+      a, em, h1, h2 {
+        color: red;
+        font-style: normal;
+      }
+
+      a {
+        border-bottom: .1em dotted;
+        text-decoration: none;
+      }
+
+      img {
+        max-width: 400px;
+      }
+
+      pre {
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <div><em>Hacking</em> Firefox<br/>made <em>easy</em></div>
+    <div>Irakli Gozalishvili<br/><a href=https://twitter.com/gozala>@gozala</a></div>
+    <div>I <em>&lt;3</em> simplicity</div>
+    <div>Firefox technology <br/>stack <em>is...</em></div>
+    <div>similar to <br/><em>web</em> stack</div>
+    <div><img style="height: 500px" src="http://pingv.com/f/styles/scale-638-blog/public/presentation/we-can-do-html5.jpg"/></div>
+    <div>just enough to be<br/><em>confusing :(</em></div>
+    <div>but <em>not enough</em> to<br/>feel <em>~/</em></div>
+    <div>What you need<br/>to <em>know</em><br/>to <em>hack</em> Firefox</div>
+    <div>&nbsp;<a href="https://developer.mozilla.org/en/docs/XUL">XUL</a>&nbsp;</div>
+    <div>is like <br/><em>HTML</em><br/></div>
+    <div>but not quite<br/><em>:(</em></div>
+    <div>&nbsp;<a href=https://developer.mozilla.org/en-US/docs/CSS>CSS</a>&nbsp;</div>
+    <div><em>+</em> mozilla <br/><a href=https://developer.mozilla.org/en-US/docs/CSS/CSS_Reference/Mozilla_Extensions>-moz-extensions</a></div>
+    <div>&nbsp;<a href=https://developer.mozilla.org/en-US/docs/XBL>XBL</a>&nbsp;</div>
+    <div>Like HTML5<br/><a href="http://dvcs.w3.org/hg/webcomponents/raw-file/tip/explainer/index.html">Web Components</a></div>
+    <div>JS</div>
+    <div><h1>+</h1>for each<em>,</em> yield</em>,</em><br/>
+    __iterator__<em>,</em> let<em>,</em> E4X<em>,</em><br/>
+    destructuring<em>,</em></br>
+    comprehensions<em>...</em></div>
+    <div><a href=https://developer.mozilla.org/en/docs/XPCOM>XPCOM</a></div>
+    <div><em>&</em><br/>the best part</div>
+    <div><img src="http://imgs.xkcd.com/comics/compiling.png"></div>
+    <div>This is a steep<br/><em>learning</em> curve</div>
+    <div>☹</div>
+    <div><em>What if</em><br> we could</div>
+    <div>Hack<br/>
+    <em>Firefox</em><br/></div>
+    <div><em>Jetpack</em> way</div>
+    <div><em>=&gt;</em></div>
+    <div>just a<br/>
+         <em>web</em> stack</br>
+    </div>
+    <div>
+      JS
+    </div>
+    <div>
+<pre>
+var widget = require("sdk/widget").Widget({
+  id: "mozilla-icon",
+  label: "My Mozilla Widget",
+  contentURL: "http://www.mozilla.org/favicon.ico"
+})
+</pre>
+    </div>
+    <div>
+      HTML <em>+</em> CSS
+    </div>
+    <div>
+<pre>
+var html = "&lt;h1&gt;&lt;span style='color:red'&gt;Hello&lt;/span&gt; world&lt;/h1&gt;"
+var panel = require("sdk/panel").Panel({
+  contentURL: "data:text/html," + html
+})
+
+panel.show()
+</pre>
+    </div>
+    <div>
+    ♻
+    </div>
+    <div>
+<pre>
+widget.on("click", function() {
+  panel.show()
+})
+</pre>
+    </div>
+    <div><img style="height: 500px" src=https://raw.github.com/ZER0/dzslides/asia-2012/assets/jetpack.png /></div>
+    <div>TODO<em>:</em></div>
+    <div>➀</div>
+    <div><em>CommonJS</em> modules<br/><em>&gt;&gt;</em> Firefox</div>
+    <div>
+<pre>
+var other = require("other/lib")
+
+exports.stuff = function(options) {
+  // Do things...
+}
+</pre>
+</div>
+    <div>Yet another<br/> <em>module</em> system,<br/>
+    seriously <em>?</em></div>
+    <div>Yes</div>
+    <div><em>Why?</em></div>
+    <div><img src=./nodejs.png><br/><img src=./npm.png /></div>
+    <div><em>&gt; 1700</em><br/> published modules</div>
+    <div><em>☑</em></div>
+    <div>You can</div>
+    <div>load <em>loader</em></div>
+    <div>as<br/><em>JSM</em></div>
+    <div>
+<pre>
+var Cu = Components.utils
+Cu.import("resource://gre/modules/commonjs/loader.js")
+</pre>
+  </div>
+      <div>Or as <br/><em>&lt;script/&gt;</em></div>
+      <div>
+  <pre>
+  &lt;script src="resource://gre/modules/commonjs/loader.js"/&gt;
+  </pre>
+  </div>
+      <div>Define module<br/><em>locations</em></div>
+      <div>
+<pre>
+{
+  "": "resource:///modules/commonjs/",
+  "toolkit/": "resource://gre/modules/commonjs/",
+  "devtools/": "resource:///modules/devtools/"
+}
+</pre>
+  </div>
+  <div>Define module<br/><em>globals</em></div>
+  <div>
+<pre>
+{
+  console: {
+    log: dump
+  }
+}
+<pre>
+    </div>
+    <div>Even expose <em>old</em> style<br/> <em>modules</em></div>
+    <div>
+<pre>
+  {
+    "devtools/gcli": Cu.import("resource:///modules/devtools/gcli.jsm").gcli
+  }
+</pre>
+    </div>
+    <div>Make your<br/> <em>loader</em></div>
+    <div>
+<pre>
+var Cu = Components.utils
+var { Loader, Require } = Cu.import("resource://gre/modules/commonjs/loader.js").Loader
+var loader = Loader({
+  // Provide module locations
+  paths: {
+    "": "resource:///modules/commonjs/",
+    "toolkit/": "resource://gre/modules/commonjs/",
+    "devtools/": "resource:///modules/devtools/"
+  },
+  // Provide module globals
+  globals: {
+    console: { log: dump }
+  },
+  // Expose old style modules
+  modules: {
+    "devtools/gcli": Cu.import("resource:///modules/devtools/gcli.jsm").gcli
+  }
+})
+
+var require = Require(loader, { id: "main" })
+</pre>
+    </div>
+    <div><em>&</em> load your <br/><em>modules</em></div>
+    <div>
+<pre>
+var gcli = require("devtools/gcli")
+var promise = require("toolkit/promise/core")
+</pre>
+      </div>
+      <div>➁</div>
+      <div>Ship <em>SDK</em> modules<br/>with Firefox</div>
+      <div>Why<em>?</em></div>
+      <div>Smaller<br/><em>Add-ons</em></div>
+      <div>Better<br/>availability</div>
+      <div>For <em>traditional</em><br/>Add-ons</div>
+      <div><em>Firefox</em><br/>code</div>
+      <div>⚒</div>
+      <div>Some of it is<br/><em>already there</em></div>
+      <div><img src=./modules.png /></div>
+      <div><em>&</em> is already<br/><em>used</em></div>
+      <div>by async<br/><a href=https://developer.mozilla.org/en-US/docs/JavaScript_OS.File>OS.File</a></div>
+      <div>by Firefox's<br/> <a href=https://developer.mozilla.org/en-US/docs/Tools/GCLI>Developer Toolbar</a></div>
+      <div>Rest is coming<br/>
+      <a href=https://bugzilla.mozilla.org/show_bug.cgi?id=731779>Bug 731779</a></div>
+      <div>⇢</div>
+    </body>
+  </html>

@@ -1,4 +1,4 @@
-onload = function() {
+window.addEventListener("DOMContentLoaded", function() {
   var body = document.body
   var slides = {}
   var slide
@@ -48,6 +48,7 @@ onload = function() {
     fit(next)
   }()
 
+
   document.onkeydown = function(e) {
     var i = slide + {39: 1, 37: -1}[e.which]
 
@@ -61,4 +62,17 @@ onload = function() {
 
     if (i in slides) location.hash = i
   }
-}
+
+  document.onkeypress = function(e) {
+    // Full screen shortcut ⌥ P
+    if (e.altKey && e.which === 960) {
+      if (document.body.requestFullScreen)
+        document.body.requestFullScreen()
+      else if (document.body.mozRequestFullScreen)
+        document.body.mozRequestFullScreen()
+      else if (document.body.webkitRequestFullScreen)
+        document.body.webkitRequestFullScreen()
+      location.hash = location.hash
+    }
+  }
+})

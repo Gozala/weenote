@@ -1,0 +1,34 @@
+/* ambiance theme for code-mirror */
+
+/* Color scheme */
+
+pre {
+  font-family: Menlo;
+  color: #E6E1DC;
+  word-wrap: break-word;
+}
+
+.keyword { color: #cda869; }
+.atom, .ambiance .constant { color: #CF7EA9; }
+.number, .ambiance .numeric { color: #78CF8A; }
+.def, .ambiance .function.name { color: #aac6e3; }
+.variable { color: #ffb795; }
+.variable-2, .ambiance .function.call { color: #eed1b3; }
+.variable-3 { color: #faded3; }
+.property, .ambiance .entity { color: #eed1b3; }
+.operator {color: #fa8d6a;}
+.comment { color: #555; font-style:italic; }
+.string { color: #8f9d6a; }
+.string-2, .ambiance .regexp { color: #9d937c; }
+.meta { color: #D2A8A1; }
+.error { color: #AF2018; }
+.qualifier { color: yellow; }
+.builtin { color: #9999cc; }
+.bracket { color: #24C2C7; }
+.tag { color: #fee4ff }
+.attribute {  color: #9B859D; }
+.header {color: #blue;}
+.quote { color: #24C2C7; }
+.hr { color: pink; }
+.link { color: #F4C20B; }
+.special { color: #FF9D00; }
