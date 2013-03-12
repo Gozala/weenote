@@ -8,7 +8,7 @@
     <link type="text/css" rel="stylesheet" href="./ambiance.css"/>
     <style>
       body {
-        font-family: "Helvetica", "sans-serif";
+        font-family: "menlo", "Helvetica", "sans-serif";
         font-weight: bold;
         background-color: #000;
         text-align: center;
@@ -39,13 +39,15 @@
     <div></div>
     <div><em>Hacking</em> Firefox<br/>made <em>easy</em></div>
     <div>Irakli Gozalishvili<br/><a href=https://twitter.com/gozala>@gozala</a></div>
+    <div>I <em>⚒</em> jetpack</div>
     <div>I <em>&lt;3</em> simplicity</div>
     <div>Firefox technology <br/>stack <em>is...</em></div>
     <div>similar to <br/><em>web</em> stack</div>
     <div><img style="height: 500px" src="http://pingv.com/f/styles/scale-638-blog/public/presentation/we-can-do-html5.jpg"/></div>
     <div>just enough to be<br/><em>confusing :(</em></div>
     <div>but <em>not enough</em> to<br/>feel <em>~/</em></div>
-    <div>What you need<br/>to <em>know</em><br/>to <em>hack</em> Firefox</div>
+    <div>What you need<br/>to <em>know</em><br/>to <em>hack</em> on Firefox</div>
+    <div>or traditional <br/><em>add-ons</em></div>
     <div>&nbsp;<a href="https://developer.mozilla.org/en/docs/XUL">XUL</a>&nbsp;</div>
     <div>is like <br/><em>HTML</em><br/></div>
     <div>but not quite<br/><em>:(</em></div>
@@ -61,6 +63,7 @@
     <div><a href=https://developer.mozilla.org/en/docs/XPCOM>XPCOM</a></div>
     <div><em>&</em><br/>the best part</div>
     <div><img src="http://imgs.xkcd.com/comics/compiling.png"></div>
+    <div>!<em>simple</em></div>
     <div>This is a steep<br/><em>learning</em> curve</div>
     <div>☹</div>
     <div><em>What if</em><br> we could</div>
@@ -106,7 +109,7 @@ widget.on("click", function() {
 })
 </pre>
     </div>
-    <div><img style="height: 500px" src=https://raw.github.com/ZER0/dzslides/asia-2012/assets/jetpack.png /></div>
+    <div><img style="max-height: 500px" src=https://raw.github.com/ZER0/dzslides/asia-2012/assets/jetpack.png /></div>
     <div>TODO<em>:</em></div>
     <div>➀</div>
     <div><em>CommonJS</em> modules<br/><em>&gt;&gt;</em> Firefox</div>
@@ -132,13 +135,13 @@ exports.stuff = function(options) {
     <div>
 <pre>
 var Cu = Components.utils
-Cu.import("resource://gre/modules/commonjs/loader.js")
+Cu.import("resource://gre/modules/commonjs/toolkit/loader.js")
 </pre>
   </div>
       <div>Or as <br/><em>&lt;script/&gt;</em></div>
       <div>
   <pre>
-  &lt;script src="resource://gre/modules/commonjs/loader.js"/&gt;
+  &lt;script src="resource://gre/modules/commonjs/toolkit/loader.js"/&gt;
   </pre>
   </div>
       <div>Define module<br/><em>locations</em></div>
@@ -173,7 +176,7 @@ Cu.import("resource://gre/modules/commonjs/loader.js")
     <div>
 <pre>
 var Cu = Components.utils
-var { Loader, Require } = Cu.import("resource://gre/modules/commonjs/loader.js").Loader
+var { Loader, Require } = Cu.import("resource://gre/modules/commonjs/toolkit/loader.js").Loader
 var loader = Loader({
   // Provide module locations
   paths: {
