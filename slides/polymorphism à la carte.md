@@ -110,19 +110,19 @@ every *bulding block*
 
 ⍐*⇠*⍐⍐
 
-It's *data* attributes
+Its *data* attributes
 
 ⍐*⇠*⍐⍐*⇠*⍐⍐⍐
 
-It's *functions*
+Its *functions*
 
 ⍐*⇠*⍐⍐*⇠*⍐⍐⍐*⇠*⍐⍐⍐⍐
 
-it's *complexity*
+its *complexity*
 
 ⍐*⇠*⍐⍐*⇠*⍐⍐⍐*⇠*⍐⍐⍐⍐*⇠*⍐⍐⍐⍐⍐
 
-get's *complex*
+gets *complex*
 with *every* block
 
 ⍐*⇠*⍐⍐*⇠*⍐⍐⍐*⇠*⍐⍐⍐⍐*⇠*⍐⍐⍐⍐⍐*⇠*⍐⍐⍐⍐⍐⍐*⇠*⍐⍐⍐⍐⍐⍐⍐*⇠*⍐⍐⍐⍐⍐⍐⍐⍐*⇠*⍐⍐⍐⍐⍐⍐⍐⍐⍐
