@@ -1,4 +1,3 @@
-var tokenize = (function() {
 var lang = {
   deepCopy: function (obj) {
     if (typeof obj != "object") {
@@ -659,16 +658,12 @@ function serialize(tokens) {
   }, "")
 }
 
-var tokenizer = new Tokenizer(new JavaScriptHighlightRules().getRules())
 
-window.addEventListener("DOMContentLoaded", function() {
-  var codeblocks = document.querySelectorAll("pre")
-  var blocks = Array.prototype.slice.call(codeblocks)
-  blocks.forEach(function(block) {
-    block.innerHTML = block.textContent.split("\n").reduce(function(result, line) {
-      return result + "\n" + serialize(tokenizer.getLineTokens(line).tokens)
-    }, "")
-  })
-}, true)
-
-})()
+function highlight(code) {
+  var tokenizer = new Tokenizer(new JavaScriptHighlightRules().getRules())
+  var lines = code.split("\n").map(function(line) {
+    return serialize(tokenizer.getLineTokens(line).tokens)
+  }).join("\n")
+  return "<pre>" + lines + "</pre>"
+}
+exports.highlight = highlight;
